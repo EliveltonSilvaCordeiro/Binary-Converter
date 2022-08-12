@@ -1,0 +1,83 @@
+@import 'configurations'
+@import 'animations'
+@import 'mixins'
+
+.main-block
+    @include flex-center
+    min-height: 100vh
+
+.card
+    animation: opening 3s ease forwards
+    padding: 30px
+
+    display: flex
+    flex-direction: column
+    gap: 30px
+
+    width: 300px
+    box-shadow: 0 0 500px rgba(155, 155, 155, 0.5)
+    border: solid 5px rgba(155, 155, 155, 0.1)
+    border-radius: 40px
+    text-align: center
+
+.conversion__box
+    animation: footer 2s ease forwards
+    display: flex
+    justify-content: space-evenly
+    align-items: center
+    flex-direction: row
+    gap: 10px
+    font-size: 20px
+
+    &.clicked
+        flex-direction: row-reverse
+
+
+.swith__icon
+    cursor: pointer
+
+.switch__binary_box,
+.switch__decimal_box
+    width: 80px
+    font-weight: 700
+
+.binary_to_decimal__input.hide,
+.decimal_to_binary__input.hide
+    display: none
+
+
+.button__content
+    transition: all .5s ease
+    cursor: pointer
+    @include flex-center
+    margin: 0 auto
+    height: 50px
+    border-radius: 5px
+    background-color: rgb(155, 155, 155)
+    letter-spacing: 2px
+    font-weight: 900
+    color: #000
+
+    &:hover
+        background-color: rgb(65, 65, 65)
+        color: rgba(212, 212, 212, 0.9)
+
+    &:active
+        transition: none
+        background-color: rgba(50, 50, 50, 0.5)
+        color: rgba(212, 212, 212, 0.5)
+
+
+.button__binary.hide,
+.button__decimal.hide
+    display: none
+
+.result__box
+    @include flex-center
+    padding: 10px
+    min-height: 50px
+    border: solid 1px #999
+    border-radius: 5px
+    background-color: #fff
+    word-wrap: break-word
+    color: #000
